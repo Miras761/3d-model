@@ -2,77 +2,53 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Презентация: Физика в космосе</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика: 3D Презентация</title>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Темный фон для космоса */
-            color: white;
+            background-color: #121212; /* Темный фон */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        header {
-            margin-top: 30px;
-            text-align: center;
+            justify-content: center;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #4da6ff;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
 
-        p.description {
-            max-width: 600px;
-            line-height: 1.6;
-            color: #cccccc;
-        }
-
-        /* Контейнер для 3D модели, чтобы она была по центру и нужного размера */
-        .model-container {
-            width: 80%;       /* Ширина модели на экране */
-            max-width: 800px; /* Максимальная ширина */
-            height: 500px;    /* Высота окна с моделью */
-            margin: 30px auto;
-            border: 1px solid #333;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(77, 166, 255, 0.2); /* Свечение */
-        }
-
-        /* Заставляем iframe (вашу модель) занимать все место в контейнере */
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        /* Настройка размера окна с моделью */
+        model-viewer {
+            width: 90%;
+            height: 70vh; /* 70% от высоты экрана */
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Физика невесомости</h1>
-        <p class="description">
-            На этой модели показан скафандр космонавта. 
-            В открытом космосе действуют иные физические законы. 
-            Покрутите модель, чтобы рассмотреть детали.
-        </p>
-    </header>
+    <h1>Астронавт (GLB)</h1>
 
-    <div class="model-container">
-        <div class="sketchfab-embed-wrapper" style="height: 100%;"> 
-            <iframe title="SpaceMan" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d3d97474387849a6b897667e1167665a/embed"> 
-            </iframe> 
-        </div>
-    </div>
-
-    <footer>
-        <p>Проект выполнил: Ученик 9 "А"</p>
-    </footer>
+    <model-viewer 
+        src="Animation_Walking_withSkin.glb" 
+        alt="3D модель астронавта" 
+        auto-rotate 
+        camera-controls 
+        autoplay 
+        shadow-intensity="1">
+    </model-viewer>
 
 </body>
 </html>
